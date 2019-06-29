@@ -16,6 +16,7 @@
 @public
     int  _no;
     int  _age;
+    char _sex;
 }
 
 @end
@@ -40,6 +41,7 @@ struct Student_IMPL {
     struct NSObject_IMPL NSOject_IVARS;
     int _no;
     int _age;
+    char _sex;
 
 };
 
@@ -103,14 +105,16 @@ void test02(){
 
 /**
  3. Student 对象 占用多少内存?
-   答： 结构体占用了16字节   系统分配了16字节
-       isa(8) + _age(4) + _no(4)  = 16 字节
+   答： 结构体占用了24字节   系统分配了32字节
+       isa(8) + _age(4) + _no(4)  + _sex(8) = 24 字节
+       由于系统分配内存的优化 需要为16的倍数   总分配为32
  */
 void test03(){
     
     Student *st = [[Student alloc] init];
     st->_no = 1;
     st->_age = 18;
+    st->_sex = 'M';
     
     size_t size_1= class_getInstanceSize([Student class]);
     
@@ -121,7 +125,7 @@ void test03(){
     
     struct Student_IMPL * stimp = (__bridge struct Student_IMPL *)st;
     
-    NSLog(@"no = %d\n age = %d\n",stimp->_no,stimp->_age);
+    NSLog(@"no = %d\n age = %d\n sex= %c\n",stimp->_no,stimp->_age,stimp->_sex);
     
 }
 
