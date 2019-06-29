@@ -120,7 +120,10 @@ void test03(){
     
     size_t size_2 = malloc_size((__bridge const void *)(st));
     
-    NSLog(@"size1 = %zd\nsize2 = %zu\n",size_1,size_2);
+    
+    size_t size_3 = sizeof(struct Student_IMPL);
+    
+    NSLog(@"size1 = %zd\nsize2 = %zu\nsize3 = %zd\n",size_1,size_2,size_3);
     
     
     struct Student_IMPL * stimp = (__bridge struct Student_IMPL *)st;
