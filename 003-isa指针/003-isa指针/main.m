@@ -116,10 +116,8 @@ void test03(){
      *  define ISA_MASK        0x00007ffffffffff8ULL
      
      */
-    unsigned long long * resut = 0x001d8001000024d1 & 0x00007ffffffffff8ULL;
-    NSLog(@"result = %p\n",resut); //result = 0x1000024d0
-
-    
+//    unsigned long long * resut = 0x001d8001000024d1 & 0x00007ffffffffff8ULL;
+//    NSLog(@"result = %p\n",resut); //result = 0x1000024d0
 }
 
 int main(int argc, const char * argv[]) {

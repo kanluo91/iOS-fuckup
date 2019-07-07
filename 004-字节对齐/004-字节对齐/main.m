@@ -32,6 +32,7 @@ struct Student2 {
     char c; //17开始   18结束
     struct Student st;// 24开始 56结束
 }; //56
+
 int main(int argc, const char * argv[]) {
 
     size_t s1 = sizeof(struct Student);

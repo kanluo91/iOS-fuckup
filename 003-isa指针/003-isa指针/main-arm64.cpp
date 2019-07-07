@@ -106,6 +106,8 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ct_513fbn1j4773xr2wqf0_xk2h0000gn_T_main_f22192_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"\351\207\221\350\247\222\345\244\247\347\216\213",12};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ct_513fbn1j4773xr2wqf0_xk2h0000gn_T_main_f22192_mi_1 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"\n%p\n%p\n%p\n",10};
 
 
 
@@ -33304,185 +33306,129 @@ objc_msgSendv_stret(void * _Nonnull stretAddr, id _Nullable self,
                     SEL _Nonnull op, size_t arg_size,
                     marg_list _Nullable arg_frame)
     __attribute__((unavailable));
+#pragma clang assume_nonnull begin
 
 
-
-#ifndef _REWRITER_typedef_Student
-#define _REWRITER_typedef_Student
-typedef struct objc_object Student;
-typedef struct {} _objc_exc_Student;
+#ifndef _REWRITER_typedef_JJPersion
+#define _REWRITER_typedef_JJPersion
+typedef struct objc_object JJPersion;
+typedef struct {} _objc_exc_JJPersion;
 #endif
 
-struct Student_IMPL {
+struct JJPersion_IMPL {
 	struct NSObject_IMPL NSObject_IVARS;
-	NSString *_name;
-	int _age;
 };
 
 
+// -(void) persionInstanceMethod;
+
+// +(void) persionClassMethod;
+
+// +(void) test;
 /* @end */
 
-
-// @implementation Student
-
-
-// @end
+#pragma clang assume_nonnull end
+#pragma clang assume_nonnull begin
 
 
+#ifndef _REWRITER_typedef_JJStudent
+#define _REWRITER_typedef_JJStudent
+typedef struct objc_object JJStudent;
+typedef struct {} _objc_exc_JJStudent;
+#endif
+
+extern "C" unsigned long OBJC_IVAR_$_JJStudent$_name;
+extern "C" unsigned long OBJC_IVAR_$_JJStudent$_weight;
+struct JJStudent_IMPL {
+	struct JJPersion_IMPL JJPersion_IVARS;
+	int _weight;
+	NSString *_name;
+};
 
 
+// @property (nonatomic,assign) int height;
 
+// -(void) studentInstanceMethod;
+
+// +(void) studentClassMethod;
+
+// +(void) test;
+
+/* @end */
+
+#pragma clang assume_nonnull end
+#pragma clang assume_nonnull begin
+
+// @interface NSObject (test)
+
+
+// +(void) test;
+
+// -(void) test;
+
+/* @end */
+
+#pragma clang assume_nonnull end
 void test01(){
 
-    Student *st = ((Student *(*)(id, SEL))(void *)objc_msgSend)((id)((Student *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Student"), sel_registerName("alloc")), sel_registerName("init"));
+    JJStudent *st = ((JJStudent *(*)(id, SEL))(void *)objc_msgSend)((id)((JJStudent *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("JJStudent"), sel_registerName("alloc")), sel_registerName("init"));
+    (*(NSString **)((char *)st + OBJC_IVAR_$_JJStudent$_name)) = (NSString *)&__NSConstantStringImpl__var_folders_ct_513fbn1j4773xr2wqf0_xk2h0000gn_T_main_f22192_mi_0;
+    (*(int *)((char *)st + OBJC_IVAR_$_JJStudent$_weight)) = 29;
 
 
+
+
+
+
+
+    ((void (*)(id, SEL))(void *)objc_msgSend)((id)st, sel_registerName("studentInstanceMethod"));
+
+
+
+
+
+
+
+    ((void (*)(id, SEL))(void *)objc_msgSend)((id)st, sel_registerName("persionInstanceMethod"));
+    ((void (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("JJStudent"), sel_registerName("studentClassMethod"));
+    ((void (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("JJStudent"), sel_registerName("persionClassMethod"));
+
+
+
+}
+
+
+
+
+
+void test02(){
+
+    ((void (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("JJPersion"), sel_registerName("test"));
+
+    ((void (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("NSObject"), sel_registerName("test"));
+
+
+
+}
+
+
+
+
+void test03(){
+
+    JJPersion *p = ((JJPersion *(*)(id, SEL))(void *)objc_msgSend)((id)((JJPersion *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("JJPersion"), sel_registerName("alloc")), sel_registerName("init"));
+    Class pClazz = ((Class (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("JJPersion"), sel_registerName("class"));
+    Class pMetaClazz = object_getClass(pClazz);
+    NSLog((NSString *)&__NSConstantStringImpl__var_folders_ct_513fbn1j4773xr2wqf0_xk2h0000gn_T_main_f22192_mi_1,p,pClazz,pMetaClazz);
 }
 
 int main(int argc, const char * argv[]) {
 
 
-    test01();
+
+    test03();
 
 
     return 0;
 }
-
-struct _prop_t {
-	const char *name;
-	const char *attributes;
-};
-
-struct _protocol_t;
-
-struct _objc_method {
-	struct objc_selector * _cmd;
-	const char *method_type;
-	void  *_imp;
-};
-
-struct _protocol_t {
-	void * isa;  // NULL
-	const char *protocol_name;
-	const struct _protocol_list_t * protocol_list; // super protocols
-	const struct method_list_t *instance_methods;
-	const struct method_list_t *class_methods;
-	const struct method_list_t *optionalInstanceMethods;
-	const struct method_list_t *optionalClassMethods;
-	const struct _prop_list_t * properties;
-	const unsigned int size;  // sizeof(struct _protocol_t)
-	const unsigned int flags;  // = 0
-	const char ** extendedMethodTypes;
-};
-
-struct _ivar_t {
-	unsigned long int *offset;  // pointer to ivar offset location
-	const char *name;
-	const char *type;
-	unsigned int alignment;
-	unsigned int  size;
-};
-
-struct _class_ro_t {
-	unsigned int flags;
-	unsigned int instanceStart;
-	unsigned int instanceSize;
-	const unsigned char *ivarLayout;
-	const char *name;
-	const struct _method_list_t *baseMethods;
-	const struct _objc_protocol_list *baseProtocols;
-	const struct _ivar_list_t *ivars;
-	const unsigned char *weakIvarLayout;
-	const struct _prop_list_t *properties;
-};
-
-struct _class_t {
-	struct _class_t *isa;
-	struct _class_t *superclass;
-	void *cache;
-	void *vtable;
-	struct _class_ro_t *ro;
-};
-
-struct _category_t {
-	const char *name;
-	struct _class_t *cls;
-	const struct _method_list_t *instance_methods;
-	const struct _method_list_t *class_methods;
-	const struct _protocol_list_t *protocols;
-	const struct _prop_list_t *properties;
-};
-extern "C" __declspec(dllimport) struct objc_cache _objc_empty_cache;
-#pragma warning(disable:4273)
-
-extern "C" unsigned long int OBJC_IVAR_$_Student$_name __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct Student, _name);
-extern "C" unsigned long int OBJC_IVAR_$_Student$_age __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct Student, _age);
-
-static struct /*_ivar_list_t*/ {
-	unsigned int entsize;  // sizeof(struct _prop_t)
-	unsigned int count;
-	struct _ivar_t ivar_list[2];
-} _OBJC_$_INSTANCE_VARIABLES_Student __attribute__ ((used, section ("__DATA,__objc_const"))) = {
-	sizeof(_ivar_t),
-	2,
-	{{(unsigned long int *)&OBJC_IVAR_$_Student$_name, "_name", "@\"NSString\"", 3, 8},
-	 {(unsigned long int *)&OBJC_IVAR_$_Student$_age, "_age", "i", 2, 4}}
-};
-
-static struct _class_ro_t _OBJC_METACLASS_RO_$_Student __attribute__ ((used, section ("__DATA,__objc_const"))) = {
-	1, sizeof(struct _class_t), sizeof(struct _class_t), 
-	0, 
-	"Student",
-	0, 
-	0, 
-	0, 
-	0, 
-	0, 
-};
-
-static struct _class_ro_t _OBJC_CLASS_RO_$_Student __attribute__ ((used, section ("__DATA,__objc_const"))) = {
-	0, __OFFSETOFIVAR__(struct Student, _name), sizeof(struct Student_IMPL), 
-	0, 
-	"Student",
-	0, 
-	0, 
-	(const struct _ivar_list_t *)&_OBJC_$_INSTANCE_VARIABLES_Student,
-	0, 
-	0, 
-};
-
-extern "C" __declspec(dllimport) struct _class_t OBJC_METACLASS_$_NSObject;
-
-extern "C" __declspec(dllexport) struct _class_t OBJC_METACLASS_$_Student __attribute__ ((used, section ("__DATA,__objc_data"))) = {
-	0, // &OBJC_METACLASS_$_NSObject,
-	0, // &OBJC_METACLASS_$_NSObject,
-	0, // (void *)&_objc_empty_cache,
-	0, // unused, was (void *)&_objc_empty_vtable,
-	&_OBJC_METACLASS_RO_$_Student,
-};
-
-extern "C" __declspec(dllimport) struct _class_t OBJC_CLASS_$_NSObject;
-
-extern "C" __declspec(dllexport) struct _class_t OBJC_CLASS_$_Student __attribute__ ((used, section ("__DATA,__objc_data"))) = {
-	0, // &OBJC_METACLASS_$_Student,
-	0, // &OBJC_CLASS_$_NSObject,
-	0, // (void *)&_objc_empty_cache,
-	0, // unused, was (void *)&_objc_empty_vtable,
-	&_OBJC_CLASS_RO_$_Student,
-};
-static void OBJC_CLASS_SETUP_$_Student(void ) {
-	OBJC_METACLASS_$_Student.isa = &OBJC_METACLASS_$_NSObject;
-	OBJC_METACLASS_$_Student.superclass = &OBJC_METACLASS_$_NSObject;
-	OBJC_METACLASS_$_Student.cache = &_objc_empty_cache;
-	OBJC_CLASS_$_Student.isa = &OBJC_METACLASS_$_Student;
-	OBJC_CLASS_$_Student.superclass = &OBJC_CLASS_$_NSObject;
-	OBJC_CLASS_$_Student.cache = &_objc_empty_cache;
-}
-#pragma section(".objc_inithooks$B", long, read, write)
-__declspec(allocate(".objc_inithooks$B")) static void *OBJC_CLASS_SETUP[] = {
-	(void *)&OBJC_CLASS_SETUP_$_Student,
-};
-static struct _class_t *L_OBJC_LABEL_CLASS_$ [1] __attribute__((used, section ("__DATA, __objc_classlist,regular,no_dead_strip")))= {
-	&OBJC_CLASS_$_Student,
-};
 static struct IMAGE_INFO { unsigned version; unsigned flag; } _OBJC_IMAGE_INFO = { 0, 2 };

@@ -35,6 +35,7 @@
 		4BA250E922C8BB53007353F7 /* JJStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJStudent.m; sourceTree = "<group>"; };
 		4BA250EB22C8CED2007353F7 /* NSObject+test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+test.h"; sourceTree = "<group>"; };
 		4BA250EC22C8CED2007353F7 /* NSObject+test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+test.m"; sourceTree = "<group>"; };
+		4BA2510122CA1876007353F7 /* main-armv7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "main-armv7.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 		4B4262D022C8B106001A81CE /* 003-isa指针 */ = {
 			isa = PBXGroup;
 			children = (
+				4BA2510122CA1876007353F7 /* main-armv7.cpp */,
 				4B4262D822C8B3D3001A81CE /* main-arm64.cpp */,
 				4B4262D122C8B106001A81CE /* main.m */,
 				4BA250E522C8BB45007353F7 /* JJPersion.h */,
